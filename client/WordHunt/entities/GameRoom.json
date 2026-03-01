@@ -1,0 +1,114 @@
+{
+  "name": "GameRoom",
+  "type": "object",
+  "properties": {
+    "room_code": {
+      "type": "string",
+      "description": "Unique 6-character room code for joining"
+    },
+    "category": {
+      "type": "string",
+      "description": "The category for word generation"
+    },
+    "words": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "The 10 words to find"
+    },
+    "grid": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "description": "15x15 letter grid"
+    },
+    "word_positions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "word": {
+            "type": "string"
+          },
+          "positions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "row": {
+                  "type": "number"
+                },
+                "col": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      },
+      "description": "Position data for each word"
+    },
+    "players": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "score": {
+            "type": "number"
+          },
+          "found_words": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "finished": {
+            "type": "boolean"
+          },
+          "finish_time": {
+            "type": "number"
+          }
+        }
+      },
+      "description": "Players in the game"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "waiting",
+        "playing",
+        "finished"
+      ],
+      "default": "waiting"
+    },
+    "start_time": {
+      "type": "number",
+      "description": "Timestamp when game started"
+    },
+    "time_limit": {
+      "type": "number",
+      "default": 300,
+      "description": "Time limit in seconds (default 5 minutes)"
+    },
+    "host_email": {
+      "type": "string",
+      "description": "Email of the room host"
+    }
+  },
+  "required": [
+    "room_code",
+    "category",
+    "host_email"
+  ]
+}
