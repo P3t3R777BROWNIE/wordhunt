@@ -21,4 +21,11 @@
     "socket.io": "^4.7.2",
     "uuid": "^9.0.0"
   }
+  {
+  "scripts": {
+    "dev": "node src/index.js",
+    "build": "prisma generate",
+    "start": "node src/index.js"
+  }
+}
 }
