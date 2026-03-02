@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "render": {
+      "url": "https://mcp.render.com/mcp",
+      "headers": {
+        "Authorization": "Bearer <rnd_NOBUkVdC94A2MYK23RDMOvMNwq1E>"
+      }
+    }
+  }
+}
